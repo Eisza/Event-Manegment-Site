@@ -1,3 +1,8 @@
+body{
+    background-image: url("loginbackground.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+}
 .loginbox{
     border:3px snow;
     padding: 5px 10px;
