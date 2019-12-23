@@ -85,6 +85,9 @@ function loadAboutUs(){
 
 </div>`
 }
+function loadHome(){
+    document.getElementById("container").innerHTML ="";
+}
 
 //index changes
 window.onload = function(){
