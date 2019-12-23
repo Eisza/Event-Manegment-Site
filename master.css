@@ -68,5 +68,8 @@ body {
     font-weight: bold;
     color:snow;
     display: block;
-    text-align: center;
+    text-align: justify;
+    padding-top: 80px;
+    padding-right: 50px;
+    padding-left: 50px;
 }
