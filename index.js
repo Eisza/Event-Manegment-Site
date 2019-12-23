@@ -1,26 +1,26 @@
 var users = [
     {
-        name:"Yasser Rahmo",
+        name:"YasserRahmo",
         pass:"7amada",
         admin:true
     },
     {
-        name:"Eisa Essam",
+        name:"EisaEssam",
         pass:"7amada",
         admin:true
     },
     {
-        name:"Abdulrahman Ashraf",
+        name:"AbdulrahmanAshraf",
         pass:"7amada",
         admin:true
     },
     {
-        name:"Esraa Osama",
+        name:"EsraaOsama",
         pass:"7amada",
         admin:true
     },
     {
-        name:"Mohammed Tarek",
+        name:"MohammedTarek",
         pass:"7amada",
         admin:true
     }
@@ -29,20 +29,41 @@ var users = [
 var isLoggedIn = false;
 var isAdmin = false;
 
-function handleLogin(){
-    var username = "Yasser Rahmo"; //document.getElementById("username").value
-    var password = "7amada"; //document.getElementById("password").value
-    var user ;
+if(window.location.href.indexOf("username=")){
+    var startIndexUsername = window.location.href.indexOf("username=") + 9;
+    var endIndexUsername = window.location.href.indexOf("&password");
+
+    var startIndexPassword = window.location.href.indexOf("password=") + 9;
+
+    var username = window.location.href.substring(startIndexUsername,endIndexUsername);
+    var password = window.location.href.substring(startIndexPassword);
+
     for(var i = 0 ; i < users.length ; i++){
         if(users[i].name === username){
             if(users[i].pass === password){
                 isLoggedIn = true;
                 isAdmin = users[i].admin;
-                window.location = "index.html";
+                
+            }
+        }
+    }
+
+    console.log(isAdmin);
+}
+function handleLogin(){
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+    for(var i = 0 ; i < users.length ; i++){
+        if(users[i].name === username){
+            if(users[i].pass === password){
+                isLoggedIn = true;
+                isAdmin = users[i].admin;
+                return true;
             }
         }
     }
     if(!isLoggedIn){
         alert("username or password incorrect");
+        return false;
     }
 }
