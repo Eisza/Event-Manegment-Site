@@ -50,22 +50,21 @@ if(window.location.href.indexOf("username=")){
         }
     }
 
-    console.log(user);
+    console.log(isLoggedIn);
 }
+
 function handleLogin(){
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
     for(var i = 0 ; i < users.length ; i++){
         if(users[i].name === username){
             if(users[i].pass === password){
-                isLoggedIn = true;
-                isAdmin = users[i].admin;
                 return true;
             }
         }
     }
     if(!isLoggedIn){
-        alert("username or password incorrect");
+        alert("ke5a");
         return false;
     }
 }
