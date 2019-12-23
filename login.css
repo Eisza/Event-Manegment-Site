@@ -1,5 +1,5 @@
 body{
-    background-image: url("loginbackground.jpg");
+    background-image: url("designs/loginbackground.jpg");
     background-size: cover;
     background-repeat: no-repeat;
 }
@@ -15,4 +15,10 @@ body{
     text-align: center;
     color: snow;
 
+}
+button{
+    margin: 10px;
+    background-color: snow;
+    border-radius: 50px;
+    font-weight: bold;
 }
