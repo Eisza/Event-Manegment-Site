@@ -69,6 +69,10 @@ function handleLogin(){
     }
 }
 
+function loadLogin(){
+    window.location.href = "login.html"
+}
+
 function handleLogout(){
     window.location.href = "index.html";
 }
