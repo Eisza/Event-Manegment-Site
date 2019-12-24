@@ -23,3 +23,8 @@ button{
     font-weight: bold;
     
 }
+a{
+    color:skyblue;
+    cursor: pointer;
+    
+}
