@@ -26,11 +26,24 @@ var users = [
         admin:true
     }
 ];
+
+function isUser(username,password){
+    for(var i = 0 ; i < users.length ; i++){
+        if(users[i].name === username){
+            if(users[i].pass === password){
+                return users[i];
+                
+            }
+        }
+    }
+    return false
+}
+
 var user;
 var isLoggedIn = false;
 var isAdmin = false;
 
-if(window.location.href.indexOf("username=")){
+if(window.location.href.indexOf("username=") > 0){
     var startIndexUsername = window.location.href.indexOf("username=") + 9;
     var endIndexUsername = window.location.href.indexOf("&password");
 
@@ -39,39 +52,94 @@ if(window.location.href.indexOf("username=")){
     var username = window.location.href.substring(startIndexUsername,endIndexUsername);
     var password = window.location.href.substring(startIndexPassword);
 
-    for(var i = 0 ; i < users.length ; i++){
-        if(users[i].name === username){
-            if(users[i].pass === password){
-                isLoggedIn = true;
-                isAdmin = users[i].admin;
-                user=users[i];
-                
-            }
+    if(isUser(username,password)){
+        user=isUser(username,password);
+        isLoggedIn = true;
+        isAdmin = user.admin;
+        
+    }
+    else{
+        user = {
+            name:username,
+            pass:password,
+            admin:false
         }
+        users.push(user);
+        isLoggedIn = true;
+        isAdmin = user.admin;
     }
 
-    console.log(user);
+    console.log(isLoggedIn);
+    console.log(users);
 }
+
 function handleLogin(){
     var username = document.getElementById("username").value;
     var password = document.getElementById("password").value;
-    for(var i = 0 ; i < users.length ; i++){
-        if(users[i].name === username){
-            if(users[i].pass === password){
-                isLoggedIn = true;
-                isAdmin = users[i].admin;
-                return true;
-            }
-        }
+    if(isUser(username,password)){
+        return true
     }
     if(!isLoggedIn){
-        alert("username or password incorrect");
+        alert("ke5a");
         return false;
     }
 }
 
+function handleSignup(){
+    var username = document.getElementById("username").value;
+    var password = document.getElementById("password").value;
+    console.log(username);
+    for(var i = 0 ; i < users.length ; i++){
+        if(users[i].name === username){
+            alert("username already exist!")
+            return false;
+        }
+        if(/\s/.test(username) || /\s/.test(password)){
+            alert("username or password cant contain spaces!")
+            return false;
+        }
+    }
+    return true;
+}
+
+function loadLogin(){
+    window.location.href = "login.html"
+}
+
 function handleLogout(){
     window.location.href = "index.html";
+}
+
+function loadSignup(){
+    document.getElementById("signForm").innerHTML = `
+    <img src="designs/logopic.png" alt="login logo" style="width:500px;height:450px;">
+    <form onsubmit="javascript: return handleSignup()" action="index.html">
+    <label for="username"> User Name: </label><br>
+    <input type="text" name="username" class="loginbox" id="username"><br>
+    <label for="password"> Password: </label><br>
+    <input type="password" name="password" class="loginbox" id="password">
+    <br>
+    <button>Sign Up</button>
+    <br>
+    <p>already a member? click here to <a onclick="loadSignin()">sign in</a></p>
+    </form>
+    `
+}
+
+function loadSignin(){
+    document.getElementById("signForm").innerHTML = `
+    <img src="designs/logopic.png" alt="login logo" style="width:500px;height:450px;">
+    <form onsubmit="javascript: return handleLogin()" action="index.html">
+    <label for="username"> User Name: </label><br>
+    <input type="text" name="username" class="loginbox" id="username"><br>
+    <label for="password"> Password: </label><br>
+    <input type="password" name="password" class="loginbox" id="password">
+    <br>
+    <button>Sign In</button>
+    <br>
+    <p>new here? click here to <a onclick="loadSignup()">sign up</a></p>
+    </form>
+    `
 }
 
 function loadAboutUs(){
@@ -94,5 +162,25 @@ window.onload = function(){
     if(user){
         document.getElementById("loginLink").setAttribute('onclick','handleLogout()');
         document.getElementById("loginLink").innerHTML = "<li>Logout</li>";
+    }
+}
+
+var events = [
+    {
+        name:"first",
+        _id:"001",
+        date:new Date(),
+        status:true,
+        participants:["abdo","bgdo"]
+    }
+];
+
+function loadEvents(){
+
+}
+
+function addParticipant(event){
+    for(var i = 0 ; i < events.length ; i++){
+        
     }
 }
