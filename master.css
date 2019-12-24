@@ -1,7 +1,7 @@
 
 body {
     background-image: url("designs/background.jpg");
-    background-size: 1540px 1030px;
+    background-size: 100%;
     background-position: bottom;
     background-attachment: fixed;
     background-repeat: no-repeat;
