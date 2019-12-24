@@ -17,7 +17,7 @@ body {
 
 }
 .inner_header {
-    width: 100%;
+    width: 70%;
     height: 100%;
     display: block;
     margin: 0 auto;
@@ -153,4 +153,109 @@ a{
     background-color: #262626;
     margin-left: 98%;
     float: right;
+}
+
+h1
+{
+background-color:black;
+text-align: center;
+color: rgb(126, 171, 255);
+margin: 50px 0 50px;
+}
+.gallery .a
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+
+}
+
+.gallery .b
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+
+}
+.gallery .c
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+
+}
+.gallery .d
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+
+}
+.PHOTOS .e
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+
+}
+.PHOTOS .f
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+
+}
+.PHOTOS .g
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+
+}
+.PHOTOS .h
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+
+}
+.G1 .i
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+
+}
+.G1 .j
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+
+}
+.G1 .k
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+
+}
+.G1 .l
+{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+
 }
