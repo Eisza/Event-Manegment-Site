@@ -1,7 +1,7 @@
 
 body {
     background-image: url("designs/background.jpg");
-    background-size: 1540px 1030px;
+    background-size: cover;
     background-position: bottom;
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -17,7 +17,7 @@ body {
 
 }
 .inner_header {
-    width: 1000px;
+    width: 100%;
     height: 100%;
     display: block;
     margin: 0 auto;
@@ -148,4 +148,9 @@ body {
 }
 a{
     cursor: pointer;
+}
+.lop{
+    background-color: #262626;
+    margin-left: 98%;
+    float: right;
 }
